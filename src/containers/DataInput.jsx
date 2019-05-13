@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { NONAME } from 'dns';
+import './DataInput.css';
 
 const styles = {
   input_output:{
@@ -24,10 +24,21 @@ class DataInput extends Component {
       <div className="data-input outer-container">
         <div className="input-container">
           <div className="page-title">{beans} Beans Data Input</div>
-          <div className="date element">
-            <div className="data-input date subtitle">Date</div>
-            <input type="date"></input>
+          <div className="date-and-id">
+            <div className="date element">
+              <div className="data-input date subtitle">Date</div>
+              <input type="date"></input>
+            </div>
+            <div className="batchid element">
+              <div className="data-input batchid subtitle">Batch ID</div>
+              <input type="text" placeholder="Please enter batch id..." style={{textAlign: "center"}}/>
+            </div>
+            <div className="placeid element">
+              <div className="data-input placeid subtitle">Place ID</div>
+              <input type="text" placeholder="Please enter place id..." style={{textAlign: "center"}}/>
+            </div>
           </div>
+            
           <div className="input-output" style={styles.input_output}>
             <div className="input element">
               <div className="category element">

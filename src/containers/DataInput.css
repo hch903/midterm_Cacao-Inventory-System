@@ -1,0 +1,11 @@
+.date-and-id {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.batchid.subtitle, .placeid.subtitle {
+    font-size: 20px;
+    padding: 5px;
+    font-family: comic Arial, Helvetica, sans-serif;
+}

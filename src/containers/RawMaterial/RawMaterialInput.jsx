@@ -8,10 +8,17 @@ class RawMaterialInput extends Component {
         return (
             <div className="input-container">
               <div className="page-title">Raw Material Purchase</div>
-              <div className="date element">
-                <div className="raw date subtitle">Date</div>
-                <input type="date"></input>
+              <div className="date-and-id">
+                <div className="date element">
+                  <div className="raw date subtitle">Date</div>
+                  <input type="date"></input>
+                </div>
+                <div className="batchid element">
+                  <div className="data-input batchid subtitle">Batch ID</div>
+                  <input type="text" placeholder="Please enter batch id..." style={{textAlign: "center"}}/>
+                </div>
               </div>
+                
               <div className="category element">
                 <div className="raw category subtitle">Beans Category</div>
                 <div className="select outside">

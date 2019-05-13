@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './SearchTable.css';
 
 const title_head = ["Date", "Process", "Input Beans", "Input Weight(kg)", "Output Beans", "Output Weight(kg)"]
-const option_title = ["Date", "Process", "Input Weight", "Output Weight"]
+const option_title = ["Date", "Process", "Weight", "ID"]
 
 
 class SearchTable extends Component {
@@ -90,10 +90,16 @@ class SearchTable extends Component {
           )
         }
       }
-      else if(option === "Input Weight" || option === "Output Weight"){
+      else if(option === "Weight"){
         return (
           <div className="filter-element">
             <div className="option-subtitle">{option}</div>
+            <div className="option">
+              <select>
+                <option value="input">Input</option>
+                <option value="output">Output</option>
+              </select>
+            </div>
             <div className="option">
               <select>
                 <option value="greater">></option>
@@ -104,6 +110,20 @@ class SearchTable extends Component {
               </select>
               <input type="text" placeholder="Please enter weight(kg)..."/>
             </div>
+          </div>
+        )
+      }
+      else if(option === "ID"){
+        return (
+          <div className="filter-element">
+            <div className="option-subtitle">{option}</div>
+            <div className="option">
+              <select>
+                <option value="input">Batch</option>
+                <option value="output">Place</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Please enter ID..."/>
           </div>
         )
       }
