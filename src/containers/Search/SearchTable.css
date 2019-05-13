@@ -1,0 +1,65 @@
+.table-container {
+    width: 100%;
+}
+.filter-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.filter-title {
+    font-size: 50px;
+}
+.filter-subtitle {
+    font-size: 30px;
+    font-weight: lighter;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex; 
+    align-items: center;
+}
+.filter-element, .filter-subtitle {
+    margin: 1.5%;
+    margin-top: 0;
+}
+
+.filter-element input {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 150px;
+}
+.option-subtitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.option {
+    display: flex;
+    flex-direction: row;
+}
+.option input {
+    margin-left:5px;
+}
+
+.data-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    overflow: auto;
+    width:100%;
+}
+
+.data-container table thead {
+    width: 100%;
+}
+.data-container table tr th {
+    position: sticky;
+    background-color: #945600;
+    top: 0px;
+}
+.data-container table tfoot tr td {
+    position: sticky;
+    bottom: 0;
+    background-color: #CE8147;
+}
