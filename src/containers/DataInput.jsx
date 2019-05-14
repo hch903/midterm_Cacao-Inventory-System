@@ -31,11 +31,19 @@ class DataInput extends Component {
             </div>
             <div className="batchid element">
               <div className="data-input batchid subtitle">Batch ID</div>
-              <input type="text" placeholder="Please enter batch id..." style={{textAlign: "center"}}/>
+              <input 
+                type="number"
+                min="0" 
+                placeholder="Please enter batch id..." 
+                style={{textAlign: "center"}}/>
             </div>
             <div className="placeid element">
               <div className="data-input placeid subtitle">Place ID</div>
-              <input type="text" placeholder="Please enter place id..." style={{textAlign: "center"}}/>
+              <input 
+                type="number"
+                min="0" 
+                placeholder="Please enter place id..." 
+                style={{textAlign: "center"}}/>
             </div>
           </div>
             
@@ -51,7 +59,11 @@ class DataInput extends Component {
               </div>
               <div className="weight element">
                 <div className="input-data weight subtitle">Input Weight</div>
-                <input type="text" placeholder="Please enter weight...(kg)" style={{textAlign: "center"}}></input>
+                <input
+                  type="number"
+                  min="0" 
+                  placeholder="Please enter weight...(kg)" 
+                  style={{textAlign: "center"}}></input>
               </div>
             </div>
             <div type="button" className="btn-arrow-right" style={styles.right_arrow}></div>
@@ -66,7 +78,11 @@ class DataInput extends Component {
               </div>
               <div className="weight element">
                 <div className="input-data weight subtitle">Input Weight</div>
-                <input type="text" placeholder="Please enter weight...(kg)" style={{textAlign: "center"}}></input>
+                <input 
+                  type="number"
+                  min="0" 
+                  placeholder="Please enter weight...(kg)" 
+                  style={{textAlign: "center"}}></input>
               </div>
             </div>
           </div>

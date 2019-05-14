@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './SearchTable.css';
 
-const title_head = ["Date", "Process", "Input Beans", "Input Weight(kg)", "Output Beans", "Output Weight(kg)"]
+const title_head = ["Date", "Process", "Batch ID", "Place ID", "Input Beans", "Input Weight(kg)", "Output Beans", "Output Weight(kg)"]
 const option_title = ["Date", "Process", "Weight", "ID"]
 
 
@@ -108,7 +108,7 @@ class SearchTable extends Component {
                 <option value="greater or equal">>=</option>
                 <option value="less or equal">&lt;=</option>
               </select>
-              <input type="text" placeholder="Please enter weight(kg)..."/>
+              <input type="number" min="0" placeholder="Please enter weight(kg)" style={{textAlign: "center"}}/>
             </div>
           </div>
         )
@@ -123,7 +123,7 @@ class SearchTable extends Component {
                 <option value="output">Place</option>
               </select>
             </div>
-            <input type="text" placeholder="Please enter ID..."/>
+            <input type="number" min="0" placeholder="Please enter ID..." style={{textAlign: "center"}}/>
           </div>
         )
       }
@@ -151,6 +151,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -159,6 +161,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -167,6 +171,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -175,6 +181,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -183,6 +191,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -191,6 +201,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -199,6 +211,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -207,6 +221,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -215,6 +231,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -223,6 +241,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -231,6 +251,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -239,6 +261,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -247,6 +271,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -255,6 +281,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -263,6 +291,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -271,6 +301,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -279,6 +311,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -287,6 +321,8 @@ class SearchTable extends Component {
               <tr>
                 <td>2019/5/13</td>
                 <td>Roast</td>
+                <td>1</td>
+                <td>4</td>
                 <td>Unfermented Roast Beans</td>
                 <td>30</td>
                 <td>Unfermented Winnowed Beans</td>
@@ -296,6 +332,8 @@ class SearchTable extends Component {
             <tfoot>
               <tr bgcolor="#CE8147">
                 <td>Total</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
