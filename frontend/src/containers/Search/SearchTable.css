@@ -1,7 +1,8 @@
 .table-container {
+    position: relative;
     width: 100%;
 }
-.filter-container {
+.filter-container, .filter-form {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -16,6 +17,7 @@
     font-family: 'Courier New', Courier, monospace;
     display: flex; 
     align-items: center;
+    flex-direction: column;
 }
 .filter-element, .filter-subtitle {
     margin: 1.5%;
@@ -26,6 +28,14 @@
     margin-top: 3px;
     margin-bottom: 3px;
     width: 150px;
+}
+.clear-element button{
+    background-color: red;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    width: 150px;
+    height: 30px;
 }
 .option-subtitle {
     display: flex;
@@ -50,7 +60,9 @@
     overflow: auto;
     width:100%;
 }
-
+.data-container table {
+    width: 87%;
+}
 .data-container table thead {
     width: 100%;
 }

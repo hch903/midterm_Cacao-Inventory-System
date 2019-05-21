@@ -4,7 +4,6 @@ import './Summary.css';
 
 const beans = ["", "Raw Material", "Roasted Beans", "Winnowed Beans", "Ground Beans", "Chocolate Bars", "Cocoa Powder"];
 
-
 class Summary extends Component {
   render() {
     return (

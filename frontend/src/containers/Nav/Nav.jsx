@@ -9,16 +9,16 @@ class Nav extends Component{
             <nav className = 'button_container'>
                 <ul>
                     <li className = "home">
-                        <a><NavLink to = "/home">Home</NavLink></a>
+                        <NavLink to = "/home">Home</NavLink>
                     </li>
                     <li className = "process">
-                        <a><NavLink to = "/process">Process</NavLink></a>
+                        <NavLink to = "/process">Process</NavLink>
                     </li>
                     <li className = "summary">
-                        <a><NavLink to = "/summary">Summary</NavLink></a>
+                        <NavLink to = "/summary">Summary</NavLink>
                     </li>
                     <li className = "search">
-                        <a><NavLink to = "/search">Search</NavLink></a>
+                        <NavLink to = "/search">Search</NavLink>
                     </li>
                 </ul>
             </nav>

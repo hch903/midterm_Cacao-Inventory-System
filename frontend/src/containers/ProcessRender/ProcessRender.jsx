@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 
 import './ProcessRender.css';
-// import 'bootstrap-directional-buttons/dist/bootstrap-directional-buttons.css';
 
 
 const process_name = ["Buy", "Roast", "Winnow", "Grind", "Package"];
@@ -16,12 +15,12 @@ const fermented_status_list = process_name.map(((process, index) => {
     <div className="process-name-container">
       <div className={`process-name ${output}`}>
         <button type="button" className="btn-arrow-right">
-          <NavLink to={`/Fermented/${input}-to-${output}/${process}/data-input`}><a>{process}</a></NavLink>
+          <NavLink to={`/data-input/Fermented/${input}-to-${output}/${process}`}>{process}</NavLink>
         </button>
       </div>
       <div className="name-text">
         <button className="name-button">
-          <NavLink to={`/search/Fermented-${output}`}><a>{output}</a></NavLink>
+          <NavLink to={`/Fermented ${output}/search`}>{output}</NavLink>
         </button>
       </div>
     </div>
@@ -34,12 +33,12 @@ const unfermented_status_list = process_name.map(((process, index) => {
     <div className="process-name-container">
       <div className={`process-name ${output}`}>
         <button type="button" className="btn-arrow-right">
-          <NavLink to={`/Unfermented/${input}-to-${output}/${process}/data-input`}><a>{process}</a></NavLink>
+          <NavLink to={`/data-input/Unfermented/${input}-to-${output}/${process}`}>{process}</NavLink>
         </button>
       </div>
       <div className="name-text">
         <button className="name-button">
-          <NavLink to={`/search/Unfermented-${output}`}><a>{output}</a></NavLink>
+          <NavLink to={`/Unfermented ${output}/search`}>{output}</NavLink>
         </button>
       </div>
     </div>

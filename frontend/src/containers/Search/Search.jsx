@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import SearchTable from './SearchTable';
+import SelectedSearchTable from './SelectedSearchTable';
+
 
 class Search extends Component {
   render() {
     const {category} = this.props.match.params;
-    const {status} = this.props.match.params;
     if(category !== undefined){
       return(
         <div className="search outer-container">
-          <SearchTable category={category} status={status}/>
+          <SelectedSearchTable category={category}/>
         </div>
       )
     }

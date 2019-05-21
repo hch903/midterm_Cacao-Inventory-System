@@ -3,7 +3,9 @@ import Filter from './Filter';
 import './SearchTable.css';
 import axios from 'axios';
 
-const title_head = ["Date", "Process", "Place ID", "Input Beans", "Input Weight(kg)", "Output Beans", "Output Weight(kg)"];
+
+const title_head = ["Date", "Process", "Place ID", "Input Beans", "Input Weight(kg)", "Output Beans", "Output Weight(kg)"]
+const option_title = ["Date", "Process", "Weight", "Place ID"]
 
 const Transactions = props => (
   <tr>
@@ -17,19 +19,19 @@ const Transactions = props => (
   </tr>
 )
 const url = "http://localhost:4000";
-class SearchTable extends Component {
+class SelectedSearchTable extends Component {
   constructor(props) {
     super(props);
 
     this.renderTransactions = this.renderTransactions.bind(this);
     this.getTransaction = this.getTransaction.bind(this);
-    
     this.state = {
       transaction: [],
     };
   }
   componentDidMount() {
-    axios.get(url+"/search")
+    const {category} = this.props;
+    axios.get(url+"/"+category) 
       .then(res => {
         this.setState({transaction: res.data});
       })
@@ -38,23 +40,25 @@ class SearchTable extends Component {
       })
   }
   
-  
   getTransaction(trans) {
     this.setState({transaction: trans})
+    // this.renderTransactions(trans);
   }
-
+  
   renderTransactions() {
-    return this.state.transaction.map((current, index) => {
-      return <Transactions transaction={current} key={index}/>
-    });
+    if (this.state.transaction !== null){
+      return this.state.transaction.map((current, index) => {
+        return <Transactions transaction={current} key={index}/>
+      });
+    }
   }
   render() {
+    const category = this.props.category;
     return (
       <div className="table-container">
-        <div className="page-title">Search Table</div>
-        
+        <div className="page-title">{category} Search Table</div>
         <div className="filter-container">
-          <Filter returnTransaction={this.getTransaction}/>
+          <Filter category={category} returnTransaction={this.getTransaction}/>
         </div>
         <div className="data-container">
           <table border="1">
@@ -71,10 +75,8 @@ class SearchTable extends Component {
           </table>
         </div>
       </div>
-      
-      
     )
   };
 }
 
-export default SearchTable;
+export default SelectedSearchTable;

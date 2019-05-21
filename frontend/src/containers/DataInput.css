@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-.batchid.subtitle, .placeid.subtitle {
+.process.subtitle, .placeid.subtitle {
     font-size: 20px;
     padding: 5px;
     font-family: comic Arial, Helvetica, sans-serif;

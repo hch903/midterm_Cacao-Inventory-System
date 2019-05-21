@@ -9,6 +9,7 @@ import DataInput from "./DataInput";
 import Search from "./Search/Search";
 import Summary from "./Summary/Summary";
 
+
 class Blog extends Component {
   render() {
     return (
@@ -17,14 +18,14 @@ class Blog extends Component {
           <div className="background">
             <Switch>
               <Redirect path="/home" to="/" />
-              <Redirect path="/:beans_category?/farm-to-Raw Material" to="/raw-material" />
+              <Redirect path="/data-input/:beans_category?/farm-to-Raw Material" to="/raw-material" />
               <Route exact path="/" component={Home}/>
               <Route exact path="/process" component={ProcessRender}/>
               <Route exact path="/raw-material" component={RawMaterial}/>
               <Route exact path="/search" component={Search}/>
-              <Route exact path="/search/:category?-:status?" component={Search}/>
+              <Route exact path="/:category/search" component={Search}/>
               <Route exact path="/summary" component={Summary}/>
-              <Route exact path="/:beans_category?/:input?-to-:output?/:process?/data-input" component={DataInput}/>
+              <Route exact path="/data-input/:beans_category?/:input?-to-:output?/:process?" component={DataInput}/>
             </Switch>
           </div>
         </div>
