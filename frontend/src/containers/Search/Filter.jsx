@@ -62,12 +62,22 @@ class Filter extends Component {
       process: this.state.process,
       placeId: this.state.placeId,
     }
+    const {category} = this.props;
 
-    axios.post(url+'/search', query)
-      .then(res => {
-        this.props.returnTransaction(res.data);
-      })
-      .catch(err => console.log(err));
+    if(category === undefined){
+      axios.post(url+'/search', query)
+        .then(res => {
+          this.props.returnTransaction(res.data);
+        })
+        .catch(err => console.log(err));
+    }
+    else{
+      axios.post(url+"/"+category, query)
+        .then(res => {
+          this.props.returnTransaction(res.data);
+        })
+        .catch(err => console.log(err));
+    }
 
     this.setState({
       start_date: '',
@@ -77,13 +87,25 @@ class Filter extends Component {
     })
   }
   clearFilter() {
-    axios.get(url+"/search")
+    const {category} = this.props;
+    if(category === undefined){
+      axios.get(url+"/search")
+        .then(res => {
+          this.props.returnTransaction(res.data);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+    else {
+      axios.get(url+"/"+category) 
       .then(res => {
         this.props.returnTransaction(res.data);
       })
       .catch(err => {
         console.log(err);
       })
+    }
   }
   // renderTransactions() {
   //   return this.props.transaction.map((current, index) => {

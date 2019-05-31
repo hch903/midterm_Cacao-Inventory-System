@@ -5,7 +5,6 @@ import axios from 'axios';
 
 
 const title_head = ["Date", "Process", "Place ID", "Input Beans", "Input Weight(kg)", "Output Beans", "Output Weight(kg)"]
-const option_title = ["Date", "Process", "Weight", "Place ID"]
 
 const Transactions = props => (
   <tr>
@@ -41,8 +40,7 @@ class SelectedSearchTable extends Component {
   }
   
   getTransaction(trans) {
-    this.setState({transaction: trans})
-    // this.renderTransactions(trans);
+    this.setState({transaction: trans});
   }
   
   renderTransactions() {

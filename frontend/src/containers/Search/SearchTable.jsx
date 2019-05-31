@@ -40,7 +40,7 @@ class SearchTable extends Component {
   
   
   getTransaction(trans) {
-    this.setState({transaction: trans})
+    this.setState({transaction: trans});
   }
 
   renderTransactions() {

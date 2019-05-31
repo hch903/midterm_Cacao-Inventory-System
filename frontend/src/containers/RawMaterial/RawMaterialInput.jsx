@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './RawMaterial.css';
 
+
 const Beans = ["Wet Beans", "Fermented Beans", "Unfermented Beans"];
 const url = "http://localhost:4000";
 class RawMaterialInput extends Component {
@@ -9,7 +10,6 @@ class RawMaterialInput extends Component {
     super(props);
 
     this.onChangeDate = this.onChangeDate.bind(this);
-    // this.onChangeBatchId = this.onChangeBatchId.bind(this);
     this.onChangePlaceId = this.onChangePlaceId.bind(this);
     this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onChangeWeight = this.onChangeWeight.bind(this);
@@ -21,6 +21,7 @@ class RawMaterialInput extends Component {
       Input_category_name: 'none',
       Input_weight: '0',
       Place_id: '',
+      Category: '',
       Output_category_name: '',
       Output_weight: '',
     };
@@ -29,17 +30,18 @@ class RawMaterialInput extends Component {
   onChangeDate(e) {
     this.setState({Date: e.target.value});
   }
-  // onChangeBatchId(e) {
-  //   this.setState({raw_batch_id: e.target.value});
-  // }
   onChangePlaceId(e) {
     this.setState({Place_id: e.target.value});
   }
   onChangeCategory(e) {
-    if(e.target.value === 'Fermented Beans' || e.target.value === 'Wet Beans')
+    if(e.target.value === 'Fermented Beans' || e.target.value === 'Wet Beans'){
       this.setState({Output_category_name: 'Fermented Raw Material'});
-    else
+      this.setState({Category: e.target.value});
+    }
+    else{
       this.setState({Output_category_name: 'Unfermented Raw Material'});
+      this.setState({Category: e.target.value});
+    }
   }
   onChangeWeight(e) {
     this.setState({Output_weight: e.target.value});
@@ -49,7 +51,7 @@ class RawMaterialInput extends Component {
 
     const newTransaction = {
       Date: this.state.Date,
-      Process_name: "buy",
+      Process_name: "Buy",
       Input_category_name: "None",
       Input_weight: 0,
       Place_id: this.state.Place_id,
@@ -58,15 +60,34 @@ class RawMaterialInput extends Component {
     };
 
     axios.post(url+"/raw-material", newTransaction)
-      .then(res => console.log(res.data));
+      .then(
+        res => {
+          const status = this.refs.status;
+          let statusDefault = status.textContent;
+          const setStatus = s => {
+            // Setting status
+            status.textContent = s;
+        
+            // Resetting status to default every x seconds
+            if (s !== statusDefault) {
+                setTimeout(() => {
+                    setStatus(statusDefault);
+                }, 2000);
+            }
+          };
+          setStatus(res.data);
+        }
+      );
 
     this.setState({
       Date: '',
       Place_id: '',
+      Category: '',
       Output_category_name: '',
       Output_weight: '',
     })
   }
+  
   render() {
     return (
       <div className="input-container">
@@ -96,7 +117,7 @@ class RawMaterialInput extends Component {
           <div className="category element">
             <div className="raw category subtitle">Beans Category</div>
             <div className="select outside">
-              <select value={this.state.Output_category_name} onChange={this.onChangeCategory}>
+              <select value={this.state.Category} onChange={this.onChangeCategory}>
                 <option value="" disabled selected>Please Select Category...</option>
                 {Beans.map((category =>
                   <option value={category}>{category}</option>  
@@ -116,6 +137,7 @@ class RawMaterialInput extends Component {
           </div>
           <div className="enter element">
             <button className="enter_button">Submit</button>
+            <div id="status" ref="status"></div>
           </div>
         </form>
         

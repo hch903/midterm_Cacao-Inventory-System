@@ -60,11 +60,10 @@ class DataInput extends Component {
     this.setState({Output_weight: e.target.value});
   }
   onChangeProcess(e) {
-    this.setState({Process_name: e.target.value.toLowercase()});
+    this.setState({Process_name: e.target.value});
   }
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.state.Input_category_name, this.state.Output_category_name)
 
     const newTransaction = {
       Date: this.state.Date,
@@ -77,7 +76,23 @@ class DataInput extends Component {
     };
 
     axios.post(url+"/data-input", newTransaction)
-      .then(res => console.log(res.data));
+      .then(
+        res => {
+          const status = this.refs.status;
+          let statusDefault = status.textContent;
+          const setStatus = s => {
+            // Setting status
+            status.textContent = s;
+        
+            // Resetting status to default every x seconds
+            if (s !== statusDefault) {
+                setTimeout(() => {
+                    setStatus(statusDefault);
+                }, 2000);
+            }
+          };
+          setStatus(res.data);
+        });
 
     this.setState({
       Date: '',
@@ -177,6 +192,7 @@ class DataInput extends Component {
             </div>
             <div className="enter element">
               <button className="enter_button">Submit</button>
+              <div id="status" ref="status"></div>
             </div>
           </form>
         </div>
