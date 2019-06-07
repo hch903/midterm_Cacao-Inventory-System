@@ -1,2 +1,2 @@
-web: node backend/index.js
-web: node frontend/index.js
+web: node backend/server.js
+web: node frontend/src/index.js
